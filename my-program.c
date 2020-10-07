@@ -176,7 +176,7 @@ int transNum(){
 
 void myError(){
     //printf("%d\n", strlen(token));
-    if(strlen(token) > 0)
+    if(strlen(token) > 0 || (int)c != -1)
         printf("Unknown\n");
     fclose(fp);
     exit(0);
