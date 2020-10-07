@@ -11,11 +11,12 @@ FILE *fp;
 int main(int argc, char *argv[]){
     fp = fopen(argv[1], "r");
     while(1){
+        symbol = -1;
         getC();
         if(c == EOF)
             break;
         clearToken();
-        while(isspace(c)) getC();
+        while(isSpace()) getC();
         if(isalpha(c)){
             while(isalpha(c)||isdigit(c)){
                 catToken();
@@ -81,6 +82,8 @@ int main(int argc, char *argv[]){
             case 13 : printf("RParenthesis\n"); break;
             case 14 : printf("Assign\n"); break;
         }
+        if(c == EOF)
+            break;
     }
     fclose(fp);
     return 0;
@@ -172,8 +175,15 @@ int transNum(){
 }
 
 void myError(){
-    printf("Unknown\n");
+    //printf("%d\n", strlen(token));
+    if(strlen(token) > 0)
+        printf("Unknown\n");
     fclose(fp);
     exit(0);
 }
 
+int isSpace(){
+    if(c == ' ' || c == '\t' || c == '\n' || c == '\r')
+        return 1;
+    return 0;
+}
