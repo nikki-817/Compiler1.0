@@ -109,7 +109,7 @@ int isComma(){
 }
 
 int isEqu(){
-    if(c == ';')
+    if(c == '=')
         return 1;
     return 0;
 }
