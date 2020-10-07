@@ -172,6 +172,7 @@ int transNum(){
 }
 
 void myError(){
+    printf("Unknown\n");
     fclose(fp);
     exit(0);
 }
