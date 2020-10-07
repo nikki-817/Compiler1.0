@@ -62,7 +62,7 @@ int main(int argc, char *argv[]){
             symbol = 11;
         }
         else{
-            myError();
+            printf("Unknown\n");
             continue;
         }
         switch(symbol){
@@ -172,7 +172,4 @@ int transNum(){
     return result;
 }
 
-void myError(){
-    printf("Unknown\n");
-}
 
