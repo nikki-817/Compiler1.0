@@ -63,6 +63,7 @@ int main(int argc, char *argv[]){
         }
         else{
             myError();
+            continue;
         }
         switch(symbol){
             case 0 : printf("Ident(%s)\n", token); break;
@@ -173,7 +174,5 @@ int transNum(){
 
 void myError(){
     printf("Unknown\n");
-    fclose(fp);
-    exit(0);
 }
 
